@@ -63,7 +63,7 @@ class TicTacToe:
 
     def check_winner(self):
         """
-        Check if there is a winner (rows only for now)
+        Check if there is a winner (rows, columns, and diagonals)
         
         Returns:
             'X' if X won, 'O' if O won, None if no winner yet
@@ -72,5 +72,17 @@ class TicTacToe:
         for row in range(3):
             if (self.board[row * 3] == self.board[row * 3 + 1] == self.board[row * 3 + 2] != ' '):
                 return self.board[row * 3]
+        
+        # Check columns
+        for col in range(3):
+            if (self.board[col] == self.board[col + 3] == self.board[col + 6] != ' '):
+                return self.board[col]
+        
+        # Check diagonals
+        if (self.board[0] == self.board[4] == self.board[8] != ' '):
+            return self.board[0]
+        
+        if (self.board[2] == self.board[4] == self.board[6] != ' '):
+            return self.board[2]
         
         return None
