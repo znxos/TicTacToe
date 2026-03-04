@@ -16,7 +16,7 @@ TicTacToe is a command-line implementation of the classic Tic-Tac-Toe game. The 
 
 ## Prerequisites
 
-- Python 3.6 or higher
+- Python 3.x or higher
 
 ## Installation
 
@@ -68,19 +68,8 @@ Press Enter to confirm each entry.
 ## Game Example
 
 ```
-Welcome to TicTacToe!
-Players will take turns entering row and column positions (0-2)
-Example: row 0, col 1 places your mark at top-middle
+![vYnmFCKcoW](https://github.com/user-attachments/assets/cf5ff61e-06a3-43e4-9883-94b7889d4b2e)
 
- X | O | X
----+---+---
- O |   |   
----+---+---
-   |   |   
-
-Player X wins!
-
-Play again? (yes/no):
 ```
 
 ## License
