@@ -12,8 +12,8 @@ def main():
     current_player_index = 0
     
     print("Welcome to TicTacToe!")
-    print("Players will take turns entering row and column positions (0-2)")
-    print("Example: row 0, col 1 places your mark at top-middle")
+    print("Players will take turns entering row and column positions (1-3)")
+    print("Example: row 1, col 2 places your mark at top-middle")
     
     while True:
         game.display_board()
@@ -24,18 +24,22 @@ def main():
         # Get and validate player input
         while True:
             try:
-                row = int(input("Enter row (0-2): "))
-                col = int(input("Enter column (0-2): "))
+                row = int(input("Enter row (1-3): "))
+                col = int(input("Enter column (1-3): "))
             except ValueError:
-                print("Invalid input. Please enter numbers between 0 and 2.")
+                print("Invalid input. Please enter numbers between 1 and 3.")
                 continue
             
-            is_valid, error_msg = game.is_valid_move(row, col)
+            # Convert from 1-3 to 0-2 for internal game logic
+            board_row = row - 1
+            board_col = col - 1
+            
+            is_valid, error_msg = game.is_valid_move(board_row, board_col)
             if not is_valid:
                 print(f"Invalid move: {error_msg}")
                 continue
             
-            if game.make_move(row, col, current_player):
+            if game.make_move(board_row, board_col, current_player):
                 break
         
         # Check game status

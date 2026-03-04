@@ -38,9 +38,9 @@ python main.py
 1. The game starts with an empty 3x3 board
 2. Player X always goes first
 3. Players alternate turns entering their move coordinates
-4. To place your mark, enter the row (0-2) and column (0-2) when prompted
-   - Row 0 is the top, Row 2 is the bottom
-   - Column 0 is the left, Column 2 is the right
+4. To place your mark, enter the row (1-3) and column (1-3) when prompted
+   - Row 1 is the top, Row 3 is the bottom
+   - Column 1 is the left, Column 3 is the right
 5. Invalid moves (occupied cells or out-of-bounds positions) will be rejected
 6. The game ends when:
    - A player gets three marks in a row, column, or diagonal (that player wins)
