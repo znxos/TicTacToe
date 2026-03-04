@@ -38,8 +38,31 @@ def main():
             if game.make_move(row, col, current_player):
                 break
         
-        # Switch to next player
-        current_player_index = 1 - current_player_index
+        # Check game status
+        status = game.get_game_status()
+        
+        if status != 'ongoing':
+            game.display_board()
+            if status == 'draw':
+                print("It's a draw! The board is full with no winner.")
+            else:
+                print(f"Player {status} wins!")
+            
+            # Ask for replay
+            while True:
+                replay = input("\nPlay again? (yes/no): ").lower().strip()
+                if replay in ['yes', 'y']:
+                    game = TicTacToe()
+                    current_player_index = 0
+                    break
+                elif replay in ['no', 'n']:
+                    print("Thanks for playing!")
+                    return
+                else:
+                    print("Please enter 'yes' or 'no'.")
+        else:
+            # Switch to next player for ongoing game
+            current_player_index = 1 - current_player_index
 
 
 if __name__ == "__main__":
