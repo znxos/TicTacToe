@@ -86,3 +86,29 @@ class TicTacToe:
             return self.board[2]
         
         return None
+
+    def is_board_full(self):
+        """
+        Check if the board is full (no empty spaces)
+        
+        Returns:
+            True if board is full, False otherwise
+        """
+        return ' ' not in self.board
+
+    def get_game_status(self):
+        """
+        Get current game status
+        
+        Returns:
+            'X' if X won, 'O' if O won, 'draw' if board is full with no winner,
+            'ongoing' if game is still in progress
+        """
+        winner = self.check_winner()
+        if winner:
+            return winner
+        
+        if self.is_board_full():
+            return 'draw'
+        
+        return 'ongoing'
