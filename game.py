@@ -60,3 +60,17 @@ class TicTacToe:
         position = row * 3 + col
         self.board[position] = player
         return True
+
+    def check_winner(self):
+        """
+        Check if there is a winner (rows only for now)
+        
+        Returns:
+            'X' if X won, 'O' if O won, None if no winner yet
+        """
+        # Check rows
+        for row in range(3):
+            if (self.board[row * 3] == self.board[row * 3 + 1] == self.board[row * 3 + 2] != ' '):
+                return self.board[row * 3]
+        
+        return None
