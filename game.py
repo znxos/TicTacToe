@@ -46,8 +46,8 @@ class TicTacToe:
         Make a move on the board
         
         Args:
-            row: Row index (0-2)
-            col: Column index (0-2)
+            row: Row index (1-3)
+            col: Column index (1-3)
             player: Player symbol ('X' or 'O')
         
         Returns:
