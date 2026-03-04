@@ -40,3 +40,23 @@ class TicTacToe:
             return False, "Position already occupied. Choose another position."
         
         return True, ""
+
+    def make_move(self, row, col, player):
+        """
+        Make a move on the board
+        
+        Args:
+            row: Row index (0-2)
+            col: Column index (0-2)
+            player: Player symbol ('X' or 'O')
+        
+        Returns:
+            True if move was successful, False otherwise
+        """
+        is_valid, _ = self.is_valid_move(row, col)
+        if not is_valid:
+            return False
+        
+        position = row * 3 + col
+        self.board[position] = player
+        return True
