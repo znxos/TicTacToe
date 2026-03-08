@@ -67,7 +67,4 @@ Press Enter to confirm each entry.
 
 ## Game Example
 ![vYnmFCKcoW](https://github.com/user-attachments/assets/cf5ff61e-06a3-43e4-9883-94b7889d4b2e)
-## License
-
-This project is part of a Software Engineering assignment (Assignment 2).
 
